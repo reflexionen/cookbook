@@ -1,0 +1,4 @@
+---
+# Cookbook compile environment
+compiler: pdflatex
+root_file: CookBook.tex
