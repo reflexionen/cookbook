@@ -1,0 +1,24 @@
+# -*- coding: utf-8 -*-
+
+sudo: true
+
+before_install:
+  - sudo apt-get update -qq
+  - sudo apt-get install texlive-latex-base texlive-latex-extra
+    texlive-lang-german texlive-fonts-recommended texlive-fonts-extra
+script:
+  - mkdir _build
+  - pdflatex -interaction=nonstopmode -halt-on-error -output-directory _build CookBook.tex
+  - pdflatex -interaction=nonstopmode -halt-on-error -output-directory _build CookBook.tex
+
+deploy:
+  provider: releases
+  api-key:
+    secure: Kx9gpEsLlafyTKsnXLWcmM4VSJhHFdwNL3W11gRT1B7xVd3YFXWyS8DU/7hQZ+Qxkc/K1yIk6fxFFR4QbL4dsofs123vw6zVFJONTskwBtpTKFMkQR6P4oRP6PRSxEvnkiPa4LO1jBn2edaczW1mRB1LQ1X+1ALcUuzg+0aqdbpKUqPzwNaxjBDqnCBOluxSISAT059szIq+y4a0V48SV0Bq5pt0ViOOw3VIxQXhmoA3NmVrjhl78VWPgUoJ3dPJkdjyACJSQobARKrNKgWIza03jjx4QohOKfZPw+6fPWvEoQvta2cpL5Z09iZA9slUunrRonB/PXDVry9eRHg+DKq4+yHFNJuSqU5J29wLOPzxQNMRbB+JFWQxOPEsbv5DqIBmLV6wtsAthu2/wIxW7V2RRYpeGDW3ifUDKv7TsOuPwMv/gjeY9Q7Q4qIXz6IhFcvXhO1IsGBNHm4EEqLu8EXdaWGBQoXPO0f/n3e7qQgFagRoO//me4PSSfa0Nvp8yk0syuQJZFm+GokqTwgUZJOBqfrP96oqd9zSg39yedrlZfuJlzxs/ODTFiutRztoGe5fpe+d4iXFPxL4v6lykh58QU0uhW0ADVmJsuzsK8ZwK2A/i6rF8qqgLbsOYgJSijXJlw4EklTbpyaeKtnaGiN2gz1ywNVow6c057aQFZM=
+  file: _build/CookBook.pdf
+  skip_cleanup: true
+  on:
+    repo: 2-B/cookbook
+    tags: true
+
+# vim: set ts=2 sw=2 tw=2 :

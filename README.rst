@@ -1,0 +1,29 @@
+==========================
+A step through the kitchen
+==========================
+
+
+|travis|
+
+.. |travis| image:: https://travis-ci.org/2-B/cookbook.svg?branch=master
+   :target: https://travis-ci.org/2-B/cookbook
+
+For downloads as pdf go to
+`Releases <https://github.com/2-B/cookbook/releases>`_.
+
+
+Create build environment
+========================
+
+.. code:: bash
+
+    sudo apt-get install texlive-latex-base \
+                         texlive-latex-extra \
+                         texlive-lang-german \
+                         texlive-fonts-extra
+
+
+License
+=======
+
+Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License
