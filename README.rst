@@ -5,11 +5,11 @@ A step through the kitchen
 
 |travis|
 
-.. |travis| image:: https://travis-ci.org/2-B/cookbook.svg?branch=master
-   :target: https://travis-ci.org/2-B/cookbook
+.. |travis| image:: https://travis-ci.org/keachi/cookbook.svg?branch=master
+   :target: https://travis-ci.org/keachi/cookbook
 
 For downloads as pdf go to
-`Releases <https://github.com/2-B/cookbook/releases>`_.
+`Releases <https://github.com/keachi/cookbook/releases>`_.
 
 
 Create build environment
