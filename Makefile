@@ -1,6 +1,7 @@
 .DEFAULT_GOAL := help
 
 PDF := CookBook.pdf
+BUILDDIR := _build
 
 help:  ## display this help
 	@cat $(MAKEFILE_LIST) | grep -E '^[0-9a-zA-Z_-]+:.*?## .*$$' | \
@@ -9,9 +10,10 @@ help:  ## display this help
 all: $(PDF)  ## create pdf
 
 %.pdf: %.tex
-	pdflatex -jobname=$* $<
+	mkdir -p $(BUILDDIR)
+	pdflatex -output-directory=$(BUILDDIR) -jobname=$* $<
 	bibtex $* || true
-	pdflatex -jobname=$* $<
+	pdflatex -output-directory=$(BUILDDIR) -jobname=$* $<
 
 clean:  ## Get rid of pdflatex files
 	rm -f *.pdf *.aux *.bbl *.blg *.log *.nav *.out *.snm *.toc
